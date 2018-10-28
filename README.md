@@ -9,15 +9,29 @@ otherwise, optionally replace "srv" command with:
 python srv.py
 ```
 
-###Step 2: Create 
+###Step 2: Install
 ```
 srv --list
-srv --install my_service --version 1.0
-srv -i my_svc -v 2
-srv --l
+srv -l
+srv --install test --version 1.0
+srv -i test v 2.0
+srv -i testt v 1.0
 ```
 
-###Step 3: Start
+###Step 3: View
 ```
-srv --start my_service
+srv -l
+srv -f test
+srv -F test -v 1.0
+```
+
+###Step 4: Deploy
+```
+srv -d test -v 1.0
+cat deploy/test/version.txt
+```
+
+###Step 5: Run
+```
+srv -s test
 ```

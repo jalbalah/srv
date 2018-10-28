@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return str(dir(request))
+    return str(request.get_data())
 
 
 if __name__ == '__main__':

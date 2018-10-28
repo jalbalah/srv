@@ -1,7 +1,9 @@
 
 
-# Step 0: Alias
+# Step 0: Clone & Alias
 ```
+git clone https://github.com/jsa41394/srv.git
+cd srv
 . ./install.sh
 ```
 otherwise, optionally replace "srv" command with: 

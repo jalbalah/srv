@@ -1,6 +1,6 @@
 
 
-# Step 1: Alias
+# Step 0: Alias
 ```
 . ./install.sh
 ```
@@ -8,6 +8,11 @@ otherwise, optionally replace "srv" command with:
 ```
 python srv.py
 ```
+
+# Step 1: Develop
+- Write some code that is called from main.py
+- Include all files in the local directory or subdirectories
+- Srv will copy all files into the deploy folder and will run from there
 
 # Step 2: Install
 ```

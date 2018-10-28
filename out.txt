@@ -1,1 +1,0 @@
-cp: cannot copy a directory, 'deploy', into itself, 'C:\Users\jsa41\Desktop\srv\deploy\test\1.0/deploy'

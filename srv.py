@@ -1,6 +1,7 @@
 
 
 import os
+import datetime
 import argparse
 
 
@@ -52,12 +53,12 @@ if __name__ == '__main__':
         with open(dsn2, 'w', encoding='utf-8') as wf:
             wf.write(RUN_FILE[1])
         os.system('cp -rf * {} 2> out.txt'.format(dsn))
+        os.system('rm out.txt')
         os.system('rm {}/out.txt && rm -rf {}/deploy'.format(dsn, dsn))
         os.system('rm {}/install.sh && rm -rf {}/README.md'.format(dsn, dsn))
-        # dsn3 = os.path.join(dsn, 'main.py')  # to do VERSIONING
-        # with open(dsn3, 'w') as wf:
-        #     with open('main.py') as rf:
-        #         wf.write(rf.read())
+        path = os.path.join(dsn, 'timestamp.txt')
+        with open(path, 'w') as wf:
+            wf.write('{}\n'.format(str(datetime.datetime.now())))
         print('Installed {}'.format(args.install))
 
     # list services
@@ -80,6 +81,7 @@ if __name__ == '__main__':
         check_version_missing()
         path = os.path.join(deploy(args.Files), str(args.version))
         os.system('ls -a --color=auto {}'.format(path))
+        os.system('cat {}'.format(os.path.join(path, 'timestamp.txt')))
 
     # set versions.txt to version number
     elif args.deploy:
